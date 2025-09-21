@@ -78,6 +78,11 @@ When solving problems, strictly follow this workflow. Especially adhere to the r
 
 3. **Keep reasoning normal** and replace the first `sorry` (from file beginning) with actual proof. However, proof blocks must be within 5 lines (as file lines), and each edit must also be within 5 lines (as file lines). Cramming everything into one line to meet the 5-line limit is prohibited (write normal Lean code). If more than 5 lines are needed, recursively apply Steps 1-2 to this subproblem to further divide it (during subdivision (recursive Steps 1-2), line count constraints don't apply, but follow each step's content requirements). Always verify build passes after each edit.
 
+### Proof Strategies
+
+- **Inline lemmas**: Use `rw [show <theorem> from by <proof>] at h` to create and apply supporting lemmas directly within rewrite steps. This adds new hypotheses to the local context without defining separate lemmas. Use for short proofs.
+- **Adding hypotheses**: Use `have` to prove intermediate lemmas of reasonable length, which adds them as new hypotheses to the local context. This is useful for building up complex proofs step by step. Use for longer proofs than inline lemmas.
+
 4. If `sorry` still remains, return to Step 3.
 
 ## Tools
