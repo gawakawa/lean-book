@@ -173,7 +173,7 @@ theorem MyNat.le_total (a b : MyNat) : a ≤ b ∨ b ≤ a := by
 example (a : MyNat) : a ≠ a + 1 := by
   simp_all
 
-example (n : MyNat) : ¬ n + 1 ≤ n := by
+theorem MyNat.not_succ_le_self (n : MyNat) : ¬ n + 1 ≤ n := by
   intro h
   rw [MyNat.le_iff_add] at h
   obtain ⟨k, hk⟩ := h
