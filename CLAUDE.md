@@ -82,6 +82,7 @@ When solving problems, strictly follow this workflow. Especially adhere to the r
 
 - **Inline lemmas**: Use `rw [show <theorem> from by <proof>] at h` to create and apply supporting lemmas directly within rewrite steps. This adds new hypotheses to the local context without defining separate lemmas. Use for short proofs.
 - **Adding hypotheses**: Use `have` to prove intermediate lemmas of reasonable length, which adds them as new hypotheses to the local context. This is useful for building up complex proofs step by step. Use for longer proofs than inline lemmas.
+- **Replacing hypotheses**: Use `replace h := <new_proof>` to replace an existing hypothesis `h` with a new proof. This is useful when you want to strengthen or transform a hypothesis while keeping the same name. Alternatively, use `replace h : <new_type> := <new_proof>` to change both the type and proof of the hypothesis.
 - **Demonstrating failure**: Use `fail_if_success <tactic>` to explicitly show that a tactic should not succeed at a particular point. This is useful in educational contexts to demonstrate when certain approaches (like `simp`) are not yet available or effective, making the learning progression clear.
 
 4. If `sorry` still remains, return to Step 3.
