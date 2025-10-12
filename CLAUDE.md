@@ -31,14 +31,16 @@ This is a Lean 4 mathematical textbook/tutorial project using:
 This is an educational Lean 4 project structured as a mathematical textbook with progressive chapters:
 
 1. **FirstProof/**: Introduction to proofs and natural numbers
-   - Custom `MyNat` inductive type implementation
+   - Custom `MyNat` inductive type implementation (`NaturalNumber.lean`)
    - Basic arithmetic operations and proofs
 
-2. **Logic/**: Logical foundations and proof techniques  
-   - Propositional logic (`PropLogic.lean`)
-   - Predicate logic (`PredLogic.lean`) 
-   - Classical logic concepts (Choice, Excluded Middle)
+2. **Logic/**: Logical foundations and proof techniques
+   - Propositional logic (`PropLigic.lean`)
+   - Predicate logic (`PredLogic.lean`)
+   - Classical logic concepts (`Choice.lean`, `ExMiddle.lean`)
    - Dependent types (`Dependent.lean`)
+   - Tips and utilities (`Tips.lean`)
+   - Curry-Howard correspondence (`CH.lean`)
 
 3. **NatCommMonoid/**: Natural number algebraic structures
    - Type class implementations (`TypeClass.lean`)
@@ -48,6 +50,35 @@ This is an educational Lean 4 project structured as a mathematical textbook with
 
 4. **NatSemiring/**: Semiring structure for natural numbers
    - Multiplication operations and proofs (`Mult.lean`)
+   - Distributivity laws (`Distrib.lean`)
+
+5. **NatOrder/**: Order relations on natural numbers
+   - Order definition and basic properties (`OrderDef.lean`)
+   - Partial order structure (`PartialOrder.lean`)
+   - Strict order relations (`StrictOrder.lean`)
+   - Decidable ordering (`DecidableOrd.lean`)
+   - Ordered monoid structure (`OrdMonoid.lean`)
+   - Cancellation properties (`AddCancel.lean`)
+   - Notation simplification (`NotationSimp.lean`, `NotationSimpTag.lean`)
+   - Compatibility tags (`CompatibleTag.lean`)
+
+6. **Int/**: Integer construction from natural numbers
+   - Pre-integer definition as pairs (`Basic.lean`)
+   - Setoid structure for equivalence relation (`Setoid.lean`)
+   - Quotient construction of integers (`Quotient.lean`)
+
+7. **IntMathlib/**: Integer algebraic structures using Mathlib
+   - Preorder structure (`PreOrder.lean`)
+   - Partial order structure (`PartialOrder.lean`)
+   - Linear order structure (`LinearOrder.lean`)
+   - Decidable ordering (`DecidableOrd.lean`)
+   - Ordered additive commutative group (`OrderedAddCommGroup.lean`)
+   - Ordered ring structure (`OrderedRing.lean`)
+   - Addition and multiplication operations (`Add.lean`, `Mul.lean`)
+
+8. **Grind/**: Grind tactic demonstrations
+   - Basic usage and examples (`Basic.lean`)
+   - Advanced applications (`Revisit.lean`)
 
 ### Module Organization
 - **Root module**: `LeanBook.lean` imports `LeanBook.Basic` (imports structured under `LeanBook/` directory)
